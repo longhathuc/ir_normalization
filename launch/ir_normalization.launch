@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+    <!-- Topics parameters-->
+    <!-- <param name="strImage_sub_topic"        value="/xtion/rgb/image_rect_color" /> -->
+    <param name="strImage_sub_topic"        value="/camera/ir/image" />
+    <param name="strCameraInfo_sub_topic"   value="/camera/ir/camera_info" />
+    <param name="strImage_pub_topic"        value="/orbbec/ir/image"/>
+  
+    <param name="strCameraModel"  value = "file://$(find ir_nomalization)/cfg/orbbec_ir.yaml"/>
+
+    <node name="ir_normalization" pkg="ir_normalization" type="ir_normalization" output ="screen"/>
+</launch>
